@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Nacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pokedex-case">
+        <div class="pokedex-header">
+            <div class="lens-container">
+                <div class="big-lens">
+                    <div class="reflection"></div>
+                </div>
+            </div>
+            <div class="small-lights">
+                <div class="light red"></div>
+                <div class="light yellow"></div>
+                <div class="light green"></div>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <input type="text" id="search-input" placeholder="Nombre o # (ej. 25, lucario)...">
+            <select id="type-filter">
+                <option value="all">Todos los tipos</option>
+            </select>
+        </div>
+
+        <div class="screen-border">
+            <div class="main-screen">
+                <div id="loading" class="loading-text">
+                    Iniciando Sistema Pokédex...<br>
+                    <span class="blink">Descargando base de datos (1025 registros)</span>
+                </div>
+                <div id="pokedex-grid" class="grid hidden"></div>
+            </div>
+            <div class="screen-decorations">
+                <div class="speaker-lines"></div>
+                <div class="speaker-lines"></div>
+                <div class="speaker-lines"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pokemon-modal" class="modal hidden">
+        <div class="modal-case">
+            <div class="modal-header">
+                <h2>DATOS DEL POKÉMON</h2>
+                <button id="close-modal" class="close-btn">X</button>
+            </div>
+            
+            <div class="modal-screen">
+                <div class="modal-left">
+                    <div class="image-stage">
+                        <img id="modal-img" src="" alt="Pokemon">
+                    </div>
+                </div>
+                
+                <div class="modal-right">
+                    <div class="data-header">
+                        <span id="modal-number" class="number-led"></span>
+                        <h2 id="modal-name"></h2>
+                    </div>
+                    
+                    <div id="modal-types" class="types-container"></div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">ALTURA</span>
+                            <span id="modal-height" class="stat-value">--</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">PESO</span>
+                            <span id="modal-weight" class="stat-value">--</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">HABILIDAD</span>
+                            <span id="modal-ability" class="stat-value">--</span>
+                        </div>
+                    </div>
+                    
+                    <div class="description-box">
+                        <span class="stat-label">REGISTRO</span>
+                        <p id="modal-description" class="pokedex-font">Cargando datos encriptados...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
